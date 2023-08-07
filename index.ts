@@ -1,5 +1,5 @@
 import express from 'express';
-import messagesRouter from "./routes/messages";
+import messagesRouter from "./routers/messages";
 import fileDb from "./fileDb";
 
 const app = express();
@@ -12,7 +12,7 @@ app.use('/messages', messagesRouter)
 const run =async () => {
     await fileDb.init();
     app.listen(port, () => {
-        console.log('We are live on ' + port);
+        console.log('Server started on port ' + port + ' !');
     });
 };
 
